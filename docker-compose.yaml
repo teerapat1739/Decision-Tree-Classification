@@ -1,9 +1,18 @@
+# version: "3"
+# services:
+#   spark:
+#     image: jupyter/pyspark-notebook
+#     ports:
+#       - "8888:8888"
+#       - "4040-4080:4040-4080"
+#     volumes:
+#       - ./notebooks:/home/jovyan/work/notebooks/
 version: "3"
 services:
-  spark:
-    image: jupyter/pyspark-notebook
-    ports:
-      - "8888:8888"
-      - "4040-4080:4040-4080"
+  datascience-notebook:
+    image: jupyter/datascience-notebook
     volumes:
-      - ./notebooks:/home/jovyan/work/notebooks/
+      - ./notebooks:/home/jovyan/work
+    ports:
+      - 8888:8888
+    container_name: datascience-notebook-container
